@@ -1,0 +1,10 @@
+.signupForm {
+    margin: auto;
+    border-radius: 25px;
+    margin-top: 5%;
+    /* margin-bottom: 25%; */
+    padding: 5%;
+    width: 50%;
+    border: 1px solid black;
+
+}
