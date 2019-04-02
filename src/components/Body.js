@@ -7,8 +7,8 @@ class Header extends Component {
       return (
         <div className="Body">
             <div className="jumbotron">
-            <h1>Health Tracker!</h1>
-            <p>We know staying healthy is difficult, but it plays a vital role in longevity.</p>
+            <h1>Rep Tracker!</h1>
+            <p>Let us help you track your workouts so you can keep track of PRs!</p>
             {/* <p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> */}
             </div>
             <Icons/>
