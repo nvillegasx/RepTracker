@@ -2,7 +2,8 @@ import { LOGIN, LOGOUT } from '../actions/types';
 
 const initialState = {
     loggedIn: false,
-    userInfo: {}
+    userInfo: {},
+    userId: ""
 }
 
 export default function(state = initialState, action){
@@ -12,7 +13,8 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 loggedIn: true,
-                userInfo: action.data
+                userInfo: action.data,
+                userID: action.data._id
             }
         case LOGOUT:
             return {

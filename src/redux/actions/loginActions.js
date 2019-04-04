@@ -22,11 +22,12 @@ export const userLogin = (userData) => dispatch => {
     )
         .then( (response) => {
             // if valid response
+            // console.log(response.data.userData)
             if(response.data.code == 200)
             {
                  return dispatch({
                     type: LOGIN,
-                    data: response.data.userData
+                    data: response.data.userData,
                 })
             }
             })

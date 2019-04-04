@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import MainScreen from '../screens/MainScreen';
 import Logout from '../screens/Logout';
 import NotFound from '../screens/NotFound';
@@ -8,15 +8,19 @@ import Signup from '../screens/Signup';
 import Login from '../screens/Login';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import AddWorkout from '../screens/AddWorkout';
 
 class Routes extends Component {
   render() {
       let main, logout;
+      let addworkout;
 
       if( this.props.loggedIn)
       {
-            main = <Route path="/mainscreen" component={MainScreen} />
+            // main = <Route path="/mainscreen" component={MainScreen} />
+            main = <Route path="/mainscreen" render={() => this.props.loggedIn === true ? <MainScreen/> : <Redirect to="/login"/>} />
             logout = <Route path="/logout" component={Logout} />
+            // addworkout = <Route path="/addworkout" component={AddWorkout}/>
       }
     return (
       <div>
@@ -29,9 +33,10 @@ class Routes extends Component {
             {/* <Route exact path="/login" component={()=> auth.login()} /> */}
             {main}
             {logout}
+            {/* {addworkout} */}
             {/* <Route exact path="/mainscreen" component={MainScreen} />
             <Route exact path="/logout" component={Logout} /> */}
-            <Route component={ NotFound}/>
+            {/* <Route component={ NotFound}/> */}
       </div>
     )
   }
