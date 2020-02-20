@@ -42,25 +42,6 @@ class AddWorkout extends Component {
     newEx.push(newRow)
     this.setState({exercises: newEx});
   }
-  // addExRow = () => {
-  //   let newEx =
-  //   <div>
-  //         <div className="col-sm form-group">
-  //           <label>Exercise</label>
-  //           <input type="text" className="form-control"></input>
-  //         </div>
-  //         { this.state.exercises.map(r => (
-  //           <div>{r}</div>
-  //         ))
-          
-  //       }
-  //         <button onClick={this.addRow(this.state.exIdx)}>Add Exercise</button>
-  //   </div>
-  //   let currEx = this.state.exercises
-  //   currEx.push(newEx)
-  //   this.setState({exercises: currEx})
-  // }
-
   
   render() {
     
@@ -68,22 +49,11 @@ class AddWorkout extends Component {
       <div>
         <form>
           <div className="row form-group">
-            <label className="col-sm">Workout Name</label>
+            <label className="col-sm">Exercise Name</label>
             <input type="text" className="col-sm form-control"></input>
-          </div>
-          <div className="row form-group">
-            <label className="col-sm">Start Time</label>
-            <input type="time" className=" col-sm form-control"></input>
-          </div>
-          <div className="row form-group">
-            <label className="col-sm">End Time</label>
-            <input type="time" className="col-sm form-control"></input>
-          </div>
-          <div>
           </div>
         </form>
         <div>
-          <h1>Exercise:</h1>
               { this.state.exercises.map(r => (
                 <div>{r}</div>
               ))
